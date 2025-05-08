@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+/* =============== */
+/* Footer Styles Only */
+/* =============== */
+#main-footer {
+    /* Color defined in home.css variable --primary-color */
+    background-color: var(--primary-color, #1a1a1a);
+    color: #ccc; /* Specific footer text color */
+    padding-top: 50px;
+    font-size: 0.9rem;
+    margin-top: auto; /* Helps push footer down */
+}
+
+/* Use a container class defined in home.css for width/centering */
+#main-footer .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+#main-footer .footer-column h4 {
+    /* Color defined in home.css variable --text-light */
+    color: var(--text-light, #ffffff);
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+#main-footer .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#main-footer .footer-column li {
+    margin-bottom: 10px;
+}
+
+#main-footer .footer-column a {
+    color: #ccc; /* Specific footer link color */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Add transition here */
+}
+
+#main-footer .footer-column a:hover {
+    /* Color defined in home.css variable --text-light */
+    color: var(--text-light, #ffffff);
+    text-decoration: underline;
+}
+
+/* Newsletter Form */
+#main-footer .newsletter-form {
+    display: flex;
+    margin-top: 10px;
+    max-width: 280px;
+}
+
+#main-footer .newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 8px 10px;
+    /* Color defined in home.css variable --secondary-color */
+    border: 1px solid var(--secondary-color, #7f7f7f);
+    background-color: #fff;
+    /* Color defined in home.css variable --text-color */
+    color: var(--text-color, #333333);
+    /* Border-radius defined in home.css variable --border-radius */
+    border-radius: var(--border-radius, 4px) 0 0 var(--border-radius, 4px);
+    border-right: none;
+    font-size: 0.85rem;
+}
+#main-footer .newsletter-form input[type="email"]:focus {
+    outline: none;
+    /* Color defined in home.css variable --accent-color */
+    border-color: var(--accent-color, #bdaaa1);
+}
+
+#main-footer .newsletter-form button {
+    padding: 8px 15px;
+    /* Color defined in home.css variable --secondary-color */
+    border: 1px solid var(--secondary-color, #7f7f7f);
+    background-color: var(--secondary-color, #7f7f7f);
+    /* Color defined in home.css variable --text-light */
+    color: var(--text-light, #ffffff);
+    cursor: pointer;
+    /* Border-radius defined in home.css variable --border-radius */
+    border-radius: 0 var(--border-radius, 4px) var(--border-radius, 4px) 0;
+    transition: background-color 0.3s ease;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+#main-footer .newsletter-form button:hover {
+    background-color: #666; /* Darker grey */
+}
+
+/* Social Icons */
+#main-footer .social-icons a {
+    color: #ccc;
+    margin-right: 12px;
+    font-size: 1.3rem;
+    display: inline-block;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Add transition here */
+}
+#main-footer .social-icons a:hover {
+    /* Color defined in home.css variable --text-light */
+    color: var(--text-light, #ffffff);
+    text-decoration: none;
+}
+
+/* Footer Bottom */
+#main-footer .footer-bottom {
+    border-top: 1px solid #444;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+/* Placeholder for icons if not using a library */
+#main-footer .icon-placeholder {
+    display: inline-block;
+    font-style: normal;
+    margin: 0 5px;
+}
