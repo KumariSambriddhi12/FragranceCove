@@ -1,106 +1,168 @@
-@charset "UTF-8";
-/* register.css */
-
-.registration-main {
-    flex-grow: 1; /* Allows main to take up remaining vertical space */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #f8f8f8;
+    flex-direction: column; /* Arrange header, container, footer vertically */
+    min-height: 100vh; /* Ensure full viewport height */
+    align-items: stretch; /* Make children stretch full width */
 }
 
-.registration-section {
-    width: 100%;
-    max-width: 450px;
+/* Header Styling (You might have more in header.css) */
+.main-header {
+    background-color: #333; /* Example header background */
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
 .registration-container {
-    background-color: #fff;
-    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Make hero and signup side-by-side */
+    width: 90%;
+    max-width: 960px;
+    margin: 20px auto; /* Center the registration content */
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex-grow: 1; /* Allow the container to grow vertically */
 }
 
-.form-title {
-    text-align: center;
+/* Hero Section (Left side - Background and Text) */
+.hero-section {
+    background: #f9f9f9;
+    color: #555;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
     color: #333;
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.already-account {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.already-account:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Signup Section (Right side - Form) */
+.signup-section {
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form-container {
+    width: 100%;
+    max-width: 380px;
+}
+
+.signup-form-container h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.signup-form-container p {
+    color: #777;
     margin-bottom: 25px;
+    font-size: 0.9em;
 }
 
 .form-group {
     margin-bottom: 20px;
 }
 
-label {
+.form-group label {
     display: block;
     margin-bottom: 8px;
-    color: #555;
+    color: #333;
     font-weight: bold;
+    font-size: 0.95em;
 }
 
-.form-control {
-    width: 100%;
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group input[type="file"],
+.form-group select {
+    width: calc(100% - 16px);
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
 }
 
-.input-with-icon {
-    position: relative;
+.form-group input[type="file"] {
+    padding: 7px;
 }
 
-.input-with-icon i {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #777;
+.form-group select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%23333" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    cursor: pointer;
 }
 
-.input-with-icon input {
-    padding-left: 30px; /* Adjust padding to accommodate the icon */
-}
-
-.form-actions {
-    margin-top: 25px;
-}
-
-.btn-primary {
+.btn-signup {
     background-color: #007bff;
     color: white;
     padding: 12px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 18px;
     width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-.btn-primary:hover {
+.btn-signup:hover {
     background-color: #0056b3;
 }
 
-.login-link {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #555;
-}
-
-.login-link a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.login-link a:hover {
-    text-decoration: underline;
-}
-
-.error-message {
-    color: red;
+.form-hint {
+    font-size: 0.85em;
+    color: #777;
     margin-top: 5px;
-    font-size: 14px;
+}
+
+/* Footer Styling (You might have more in footer.css) */
+.main-footer {
+    background-color: #f8f9fa; /* Example footer background */
+    color: #555;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
 }

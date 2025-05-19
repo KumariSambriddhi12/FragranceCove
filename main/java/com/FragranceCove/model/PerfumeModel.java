@@ -1,82 +1,86 @@
 package com.FragranceCove.model;
 
+import java.sql.Timestamp; // If you use dateAdded
+
 public class PerfumeModel {
-    private int Id;
-    private String Brand;
-    private String ItemForm;
-    private String Volume;
-    private String Scent;
-    private String SpecialFeature;
-    private int price;
-    private int stockQuantity; // Added stock quantity
+    private int id;
+    private String name;
+    private String brand;          // Display name for the brand (from JOIN)
+    private int brandId;           // Foreign key to brands table
+    private String category;       // Display name for the category (from JOIN)
+    private int categoryId;        // Foreign key to categories table
+    private String description;
+    private double price;
+    private int stockQuantity;
+    private String imageUrl;
+    private Timestamp dateAdded;   // Optional: Date when perfume was added
 
     public PerfumeModel() {
     }
 
-    public PerfumeModel(int Id, String Brand, String ItemForm, String Volume, String Scent, String SpecialFeature, int price, int stockQuantity) {
-        this.Id = Id;
-        this.Brand = Brand;
-        this.ItemForm = ItemForm;
-        this.Volume = Volume;
-        this.Scent = Scent;
-        this.SpecialFeature = SpecialFeature;
-        this.price = price;
-        this.stockQuantity = stockQuantity;
-    }
+    // Getters and Setters for all fields
 
     public int getId() {
-        return Id;
+        return id;
     }
 
-    public void setId(int Id) {
-        this.Id = Id;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getBrand() {
-        return Brand;
+        return brand;
     }
 
-    public void setBrand(String Brand) {
-        this.Brand = Brand;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public String getItemForm() {
-        return ItemForm;
+    public int getBrandId() {
+        return brandId;
     }
 
-    public void setItemForm(String ItemForm) {
-        this.ItemForm = ItemForm;
+    public void setBrandId(int brandId) {
+        this.brandId = brandId;
     }
 
-    public String getVolume() {
-        return Volume;
+    public String getCategory() {
+        return category;
     }
 
-    public void setVolume(String Volume) {
-        this.Volume = Volume;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public String getScent() {
-        return Scent;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setScent(String Scent) {
-        this.Scent = Scent;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public String getSpecialFeature() {
-        return SpecialFeature;
+    public String getDescription() {
+        return description;
     }
 
-    public void setSpecialFeature(String SpecialFeature) {
-        this.SpecialFeature = SpecialFeature;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -86,5 +90,33 @@ public class PerfumeModel {
 
     public void setStockQuantity(int stockQuantity) {
         this.stockQuantity = stockQuantity;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public Timestamp getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setDateAdded(Timestamp dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
+    @Override
+    public String toString() {
+        return "PerfumeModel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", brandId=" + brandId +
+                ", categoryId=" + categoryId +
+                ", price=" + price +
+                // Add other fields if needed for debugging
+                '}';
     }
 }

@@ -38,6 +38,40 @@ public class LoginService {
 	 * @return true if the user credentials are valid, false otherwise; null if a
 	 *         connection error occurs
 	 */
+	public UserModel authenticateUser(String username, String password) {
+	    if (dbConn == null) {
+	        System.err.println("Database connection is not available!");
+	        return null;
+	    }
+
+	    String query = "SELECT u.*, r.role_name FROM users u " +
+	                   "JOIN roles r ON u.role_id = r.role_id " +
+	                   "WHERE u.username = ? AND u.password = ? AND u.status = 'active'";  
+	                   // Check active status and use hashed password comparison in production
+
+	    try {
+	        PreparedStatement stmt = dbConn.prepareStatement(query);
+	        stmt.setString(1, username);
+	        stmt.setString(2, password);  // In production, compare hashed passwords
+	        ResultSet result = stmt.executeQuery();
+
+	        if (result.next()) {
+	            UserModel user = new UserModel();
+	            user.setUser_id(result.getInt("user_id"));
+	            user.setUsername(result.getString("username"));
+	            user.setFirst_name(result.getString("first_name"));
+	            user.setLast_name(result.getString("last_name"));
+	            user.setEmail(result.getString("email"));
+	            user.setRole_id(result.getInt("role_id"));
+	            user.setImage_url(result.getString("image_url"));
+	            return user;
+	        }
+	    } catch (SQLException e) {
+	        System.err.println("Error during user authentication: " + e.getMessage());
+	        e.printStackTrace();
+	    }
+	    return null;
+	}
 	public Boolean loginUser(UserModel userModel) {
 		if (isConnectionError) {
 			System.out.println("Connection Error!");

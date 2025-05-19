@@ -15,6 +15,15 @@ public class RoleModel {
         this.roleName = roleName;
         this.description = description;
     }
+    
+    public RoleModel(Integer roleId, String roleName) {
+        this.roleId = roleId;
+        this.roleName = roleName;
+     
+    }
+    
+    
+    
 
     // Getter methods
     public Integer getRoleId() {

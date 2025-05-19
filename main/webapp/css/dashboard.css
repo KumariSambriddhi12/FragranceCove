@@ -1,185 +1,186 @@
 @charset "UTF-8";
+
 /* Luxury Perfume Admin Dashboard Styles */
 :root {
-    --gold: #D4AF37;
-    --deep-purple: #2A0A3D;
-    --soft-ivory: #F8F4E9;
-    --dark-velvet: #1A0A26;
-    --rose-gold: #B76E79;
-    --translucent-white: rgba(255, 255, 255, 0.85);
+	--gold: #D4AF37;
+	--deep-purple: #2A0A3D;
+	--soft-ivory: #F8F4E9;
+	--dark-velvet: #1A0A26;
+	--rose-gold: #B76E79;
+	--translucent-white: rgba(255, 255, 255, 0.85);
 }
 
 body {
-    background-color: var(--soft-ivory);
-    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
-    color: var(--dark-velvet);
-    line-height: 1.6;
-    background-image: url('https://example.com/luxury-paper-texture.jpg');
-    background-attachment: fixed;
-    background-size: cover;
+	background-color: var(--soft-ivory);
+	font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+	color: var(--dark-velvet);
+	line-height: 1.6;
+	background-image: url('https://example.com/luxury-paper-texture.jpg');
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 .dashboard-container {
-    max-width: 1400px;
-    margin: 2rem auto;
-    background-color: var(--translucent-white);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    overflow: hidden;
+	max-width: 1400px;
+	margin: 2rem auto;
+	background-color: var(--translucent-white);
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	overflow: hidden;
 }
 
 .header {
-    background: linear-gradient(135deg, var(--deep-purple), var(--dark-velvet));
-    color: white;
-    padding: 1.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid var(--gold);
+	background: linear-gradient(135deg, var(--deep-purple), var(--dark-velvet));
+	color: white;
+	padding: 1.5rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 2px solid var(--gold);
 }
 
 .logo {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    background: linear-gradient(to right, var(--gold), var(--rose-gold));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	font-size: 2rem;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	background: linear-gradient(to right, var(--gold), var(--rose-gold));
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Stats Cards - Perfume Bottle Inspired */
 .stats-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+	padding: 2rem;
 }
 
 .stat-card {
-    background: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border-top: 3px solid var(--gold);
+	background: white;
+	border-radius: 8px;
+	padding: 1.5rem;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+	border-top: 3px solid var(--gold);
 }
 
 .stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+	transform: translateY(-5px);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(183, 110, 121, 0.1));
-    z-index: 0;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(183, 110, 121, 0.1));
+	z-index: 0;
 }
 
 .stat-value {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--deep-purple);
-    margin-bottom: 0.5rem;
-    position: relative;
-    z-index: 1;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: var(--deep-purple);
+	margin-bottom: 0.5rem;
+	position: relative;
+	z-index: 1;
 }
 
 .stat-label {
-    font-size: 0.9rem;
-    color: var(--rose-gold);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    z-index: 1;
+	font-size: 0.9rem;
+	color: var(--rose-gold);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	position: relative;
+	z-index: 1;
 }
 
 /* Charts - Elegant Glass Effect */
 .charts-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    padding: 0 2rem 2rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem;
+	padding: 0 2rem 2rem;
 }
 
 .chart-card {
-    background: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
+	background: white;
+	border-radius: 8px;
+	padding: 1.5rem;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	background: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(10px);
 }
 
 .chart-card h3 {
-    color: var(--deep-purple);
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--gold);
+	color: var(--deep-purple);
+	font-size: 1.2rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid var(--gold);
 }
 
 /* Buttons - Gold Accents */
 .btn {
-    background: linear-gradient(to right, var(--gold), var(--rose-gold));
-    color: white;
-    border: none;
-    padding: 0.6rem 1.5rem;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: 500;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+	background: linear-gradient(to right, var(--gold), var(--rose-gold));
+	color: white;
+	border: none;
+	padding: 0.6rem 1.5rem;
+	border-radius: 30px;
+	cursor: pointer;
+	font-weight: 500;
+	letter-spacing: 1px;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
 /* Navigation - Luxe Menu */
 .nav-menu {
-    display: flex;
-    gap: 1.5rem;
+	display: flex;
+	gap: 1.5rem;
 }
 
 .nav-item {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 1px;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+	letter-spacing: 1px;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	transition: all 0.3s ease;
 }
 
 .nav-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--gold);
+	background: rgba(255, 255, 255, 0.1);
+	color: var(--gold);
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .charts-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .header {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
+	.charts-container {
+		grid-template-columns: 1fr;
+	}
+
+	.header {
+		flex-direction: column;
+		text-align: center;
+		gap: 1rem;
+	}
 }

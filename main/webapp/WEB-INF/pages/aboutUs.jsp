@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Aromance</title> <%-- Or your brand name --%>
+    <title>About Us | Fragrance Cove</title> <%-- Or your brand name --%>
 
     <%-- Link Common Styles First --%>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">

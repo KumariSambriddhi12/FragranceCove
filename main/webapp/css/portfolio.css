@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+/* Luxury Bitcoin Profile CSS - Works with existing JSP */
+:root {
+	--gold: #D4AF37;
+	--deep-purple: #2A0A3D;
+	--soft-ivory: #F8F4E9;
+	--dark-velvet: #1A0A26;
+	--rose-gold: #B76E79;
+	--bitcoin-orange: #F7931A;
+	--glass-effect: rgba(255, 255, 255, 0.1);
+	--text-dark: #2A2A2A;
+}
+
+body {
+	font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+	background-color: var(--soft-ivory);
+	color: var(--text-dark);
+	line-height: 1.6;
+	background-image: url('https://example.com/luxury-paper-texture.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
+.profile-container {
+	display: flex;
+	min-height: 100vh;
+	max-width: 1400px;
+	margin: 0 auto;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar {
+	width: 280px;
+	background: linear-gradient(145deg, var(--deep-purple), #1E0D36);
+	color: white;
+	padding: 2rem 1.5rem;
+	position: relative;
+	z-index: 1;
+}
+
+.sidebar::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 1px;
+	height: 100%;
+	background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+	z-index: 2;
+}
+
+.sidebar-title {
+	font-size: 1.7rem;
+	font-weight: 600;
+	margin-bottom: 2.5rem;
+	color: var(--gold);
+	letter-spacing: 0.5px;
+	position: relative;
+	padding-bottom: 0.5rem;
+}
+
+.sidebar-title::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 40px;
+	height: 2px;
+	background: var(--rose-gold);
+}
+
+.nav-menu {
+	list-style: none;
+	margin-bottom: 2.5rem;
+}
+
+.nav-item {
+	padding: 0.9rem 1.2rem;
+	margin-bottom: 0.5rem;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: 1.05rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.nav-item:hover {
+	background-color: rgba(212, 175, 55, 0.08);
+}
+
+.nav-item.active {
+	background: linear-gradient(90deg, rgba(212, 175, 55, 0.2), transparent);
+	color: var(--gold);
+	font-weight: 500;
+	border-left: 2px solid var(--gold);
+}
+
+.verification-banner {
+	background: rgba(183, 110, 121, 0.15);
+	color: var(--rose-gold);
+	padding: 0.9rem 1rem;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	font-size: 0.9rem;
+	border: 1px dashed rgba(183, 110, 121, 0.4);
+}
+
+.verification-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	background-color: var(--rose-gold);
+	color: var(--dark-velvet);
+	border-radius: 50%;
+	margin-right: 0.8rem;
+	font-weight: bold;
+	font-size: 0.8rem;
+}
+
+.main-content {
+	flex: 1;
+	padding: 2.5rem 3rem;
+	background-color: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(8px);
+}
+
+.profile-title {
+	font-size: 2rem;
+	margin-bottom: 2.5rem;
+	color: var(--text-dark);
+	font-weight: 500;
+	letter-spacing: 0.3px;
+}
+
+.profile-details {
+	max-width: 600px;
+}
+
+.detail-group {
+	margin-bottom: 1.8rem;
+}
+
+.detail-group label {
+	display: block;
+	margin-bottom: 0.6rem;
+	color: var(--rose-gold);
+	font-size: 0.9rem;
+	font-weight: 500;
+	letter-spacing: 0.3px;
+}
+
+.detail-value {
+	padding: 1rem 1.2rem;
+	background-color: var(--glass-effect);
+	border-radius: 4px;
+	font-size: 1.05rem;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	transition: all 0.2s ease;
+}
+
+.detail-value:hover {
+	background-color: rgba(255, 255, 255, 0.6);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.birth-date {
+	display: flex;
+	gap: 1.2rem;
+}
+
+.date-part {
+	flex: 1;
+}
+
+.date-label {
+	font-size: 0.82rem;
+	color: var(--rose-gold);
+	margin-bottom: 0.4rem;
+}
+
+.date-value {
+	padding: 1rem 1.2rem;
+	background-color: var(--glass-effect);
+	border-radius: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.copyright-notice {
+	margin-top: 3rem;
+	color: #888;
+	font-size: 0.85rem;
+	font-style: italic;
+}
+
+.learn-more {
+	color: var(--gold);
+	text-decoration: none;
+	position: relative;
+}
+
+.learn-more:hover {
+	text-decoration: underline;
+	text-decoration-color: var(--rose-gold);
+}
+
+@media (max-width: 768px) {
+	.profile-container {
+		flex-direction: column;
+	}
+
+	.sidebar {
+		width: 100%;
+		padding: 1.8rem;
+	}
+
+	.main-content {
+		padding: 2rem;
+	}
+
+	.birth-date {
+		flex-direction: column;
+		gap: 0.8rem;
+	}
+}

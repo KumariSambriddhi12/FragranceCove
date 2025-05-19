@@ -43,17 +43,19 @@ public class UpdateService {
             return null;
         }
 
-        String updateSQL = "UPDATE perfumes SET brand = ?, item_form = ?, volume = ?, "
-                + "scent = ?, special_feature = ?, price = ? WHERE id = ?"; // Adjust table and column names
+        String updateSQL = "UPDATE perfumes SET id = ?, brand = ?, name = ?, description = ?, "
+                + "price = ?, stock_quantity = ?, image_url, category = ? WHERE id = ?"; // Adjust table and column names
 
         try (PreparedStatement preparedStatement = dbConn.prepareStatement(updateSQL)) {
-            preparedStatement.setString(1, perfume.getBrand());
-            preparedStatement.setString(2, perfume.getItemForm());
-            preparedStatement.setString(3, perfume.getVolume());
-            preparedStatement.setString(4, perfume.getScent());
-            preparedStatement.setString(5, perfume.getSpecialFeature());
-            preparedStatement.setInt(6, perfume.getPrice());
-            preparedStatement.setInt(7, perfume.getId()); // Assuming 'id' is the primary key
+        	preparedStatement.setInt(1, perfume.getId());
+            preparedStatement.setString(2, perfume.getBrand());
+            preparedStatement.setString(3, perfume.getName());
+            preparedStatement.setString(4, perfume.getDescription());
+            preparedStatement.setDouble(5, perfume.getPrice());
+            preparedStatement.setInt(6, perfume.getStockQuantity());
+            preparedStatement.setString(7, perfume.getImageUrl());
+            preparedStatement.setString(8, perfume.getCategory());
+            
 
             int rowsAffected = preparedStatement.executeUpdate();
             return rowsAffected > 0;

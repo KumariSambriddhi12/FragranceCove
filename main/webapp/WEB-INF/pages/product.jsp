@@ -1,67 +1,69 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Collection | Luxury Fragrances</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/products.css">
+    <title>Our Perfumes</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
 </head>
 <body>
-    <%@ include file="header.jsp" %>
+	<%-- Include Header --%>
+	<jsp:include page="header.jsp" />
 
-    <main class="products-main">
-        <section class="product-filters">
-            <div class="container">
-                <h1>Perfume Collection</h1>
-                <div class="filter-options">
-                    <div class="filter-group">
-                        <label>Category:</label>
-                        <select>
-                            <option>All Fragrances</option>
-                            <option>Women's Perfume</option>
-                            <option>Men's Cologne</option>
-                            <option>Unisex</option>
-                        </select>
+    <div class="products-container">
+        <h2 class="products-title">Our Exquisite Perfumes</h2>
+        <p class="products-subtitle">Discover your signature scent.</p>
+
+        <div class="products-filter">
+            <button class="filter-button active">All Perfumes</button>
+            <button class="filter-button">Floral</button>
+            <button class="filter-button">Woody</button>
+            <button class="filter-button">Citrus</button>
+            <button class="filter-button">Oriental</button>
+            <button class="filter-button">Fresh</button>
+            </div>
+
+        <div class="products-grid">
+            <c:if test="${empty perfumeList}">
+                <p class="debug-info">No perfumes found in the database.</p>
+            </c:if>
+
+            <c:forEach var="perfume" items="${perfumeList}">
+                <div class="product-card" data-category="${perfume.category}">
+                    <div class="product-image">
+                        <img src="${not empty perfume.imageUrl ? perfume.imageUrl : 'images/placeholder.jpg'}" alt="${perfume.name}">
                     </div>
-                    <div class="filter-group">
-                        <label>Sort By:</label>
-                        <select>
-                            <option>Best Sellers</option>
-                            <option>New Arrivals</option>
-                            <option>Price: Low to High</option>
-                        </select>
+                    <div class="product-details">
+                        <h3 class="product-name">${perfume.name}</h3>
+                        <p class="product-brand">${perfume.brand}</p>
+                        <p class="product-category">Category: ${perfume.category}</p>
+                        <p class="product-price">$${perfume.price}</p>
+                        <%-- <p class="product-description">${perfume.description}</p> --%>
+                        <form action="${pageContext.request.contextPath}/cart" method="post">
+                            <input type="hidden" name="action" value="add">
+                            <input type="hidden" name="productId" value="${perfume.id}">
+                            <button type="submit" class="add-to-cart">Buy Now</button>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </section>
+            </c:forEach>
+        </div>
 
-        <section class="product-grid-section">
-            <div class="container">
-                <div class="product-grid">
-                    <!-- Product 1 -->
-                    <div class="product-card">
-                        <div class="product-badge">Best Seller</div>
-                        <img src="${pageContext.request.contextPath}/images/products/perfume1.jpg" alt="Elegance Noir">
-                        <div class="product-info">
-                            <h3>Elegance Noir</h3>
-                            <div class="scent-notes">
-                                <span>Floral</span>
-                                <span>Woody</span>
-                                <span>Vanilla</span>
-                            </div>
-                            <span class="price">$129.99</span>
-                            <a href="product.jsp?id=1" class="btn btn-sm">View Details</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Repeat product cards... -->
-                </div>
+        <div class="pagination">
+            <button class="pagination-button prev">&larr;</button>
+            <div class="pagination-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
-        </section>
-    </main>
+            <button class="pagination-button next">&rarr;</button>
+        </div>
+    </div>
 
-    <%@ include file="footer.jsp" %>
+	<%-- Include Footer --%>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

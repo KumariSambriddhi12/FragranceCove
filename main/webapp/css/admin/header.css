@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+/* =============== */
+/* Uber-Inspired Header Styles */
+/* =============== */
+
+#main-header {
+	background-color: #000000;
+	/* Black background like Uber */
+	padding: 0;
+	/* Remove default padding, control height via content */
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	/* Remove border/shadow for flatter look */
+	border-bottom: none;
+	box-shadow: none;
+	color: #ffffff;
+	/* Default text color white */
+}
+
+/* Container specific to this header style */
+#main-header .uber-header-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* Adjust height via padding or min-height as needed */
+	min-height: 64px;
+	/* Example height */
+	/* Max width and centering assumed from .container in home.css */
+}
+
+/* Left side: Logo + Primary Nav */
+#main-header .header-left {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	/* Space between logo and nav */
+}
+
+#main-header .logo-container {
+	flex-shrink: 0;
+}
+
+#main-header .logo-link {
+	display: inline-block;
+}
+
+#main-header .logo-text {
+	font-size: 1.8rem;
+	/* Adjust size */
+	font-weight: 700;
+	/* Bold */
+	color: #ffffff;
+	/* White logo text */
+	text-decoration: none;
+	letter-spacing: -0.5px;
+	/* Optional: slightly tighter spacing */
+}
+
+#main-header .primary-nav ul {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	gap: 25px;
+	/* Space between primary nav items */
+}
+
+#main-header .primary-nav a {
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: 500;
+	/* Medium weight */
+	font-size: 0.95rem;
+	padding: 10px 5px;
+	/* Vertical padding helps alignment */
+	transition: color 0.2s ease;
+}
+
+#main-header .primary-nav a:hover {
+	color: #cccccc;
+	/* Slightly dimmer on hover */
+}
+
+/* Right side: Secondary Nav + Sign Up */
+#main-header .header-right {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+	/* Space between secondary nav and button */
+}
+
+#main-header .secondary-nav ul {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	gap: 20px;
+	/* Space between secondary nav items */
+}
+
+#main-header .secondary-nav a {
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: 400;
+	/* Regular weight */
+	font-size: 0.9rem;
+	padding: 10px 0;
+	transition: color 0.2s ease;
+}
+
+#main-header .secondary-nav a:hover {
+	color: #cccccc;
+	/* Slightly dimmer on hover */
+}
+
+/* Sign Up Button Styling */
+#main-header .btn-signup {
+	/* Use button base styles from home.css if defined, override as needed */
+	background-color: #ffffff;
+	/* White background */
+	color: #000000;
+	/* Black text */
+	border: none;
+	padding: 8px 18px;
+	/* Adjust padding */
+	border-radius: 20px;
+	/* Rounded pill shape */
+	font-weight: 500;
+	font-size: 0.9rem;
+	text-transform: none;
+	/* Override uppercase if set globally */
+	letter-spacing: normal;
+	/* Override letter-spacing if set globally */
+	transition: background-color 0.2s ease;
+	text-decoration: none;
+	/* Ensure no underline */
+	white-space: nowrap;
+	/* Prevent wrapping */
+}
+
+#main-header .btn-signup:hover {
+	background-color: #f0f0f0;
+	/* Slightly off-white on hover */
+	color: #000000;
+}
+
+/* Remove underline hover effect from previous examples if present */
+#main-header .main-nav a::after,
+#main-header .primary-nav a::after,
+#main-header .secondary-nav a::after {
+	display: none;
+}
+
+
+/* editing */
+
+.nav > li {
+    position: relative;
+}
+
+.nav > li > a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Submenu hidden by default */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 180px;
+    z-index: 1000;
+}
+
+/* Show submenu on hover */
+.nav > li:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    background-color: #555;
+}
